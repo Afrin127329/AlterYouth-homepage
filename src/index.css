@@ -142,16 +142,13 @@ body {
   }
 
   body {
-    @apply bg-gray-400 text-foreground;
+    @apply bg-white text-foreground;
   }
 
   body {
     font-family: Gilroy, Helvetica, Indie Flower !important;
   }
 
-  .active {
-    @apply bg-red-400 text-primary-foreground;
-  }
 
 }
 

@@ -1,0 +1,24 @@
+.hero {
+  display: flex;
+  background-image: url("/src/assets/images/hero_home_phone.jpg");
+  background-position: 50% 80%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 535px !important;
+}
+
+/* Apply for larger screens (desktop) */
+@media (min-width: 768px) {
+  .hero {
+    background-image: linear-gradient(to bottom,
+        rgba(0, 0, 0, 0.7) 0%,
+        rgba(255, 255, 255, 0) 25%,
+        rgba(255, 255, 255, 0)),
+      url("/src/assets/images/hero_pc.jpg");
+    background-position: 70% 60%;
+    background-size: cover;
+    height: 85vh !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+}

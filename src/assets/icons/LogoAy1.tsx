@@ -1,4 +1,13 @@
-function SvgAlteryouthLogo(props) {
+
+
+
+import React from 'react';
+
+interface SvgAlteryouthLogoProps extends React.SVGProps<SVGSVGElement> {
+  color?: string;
+}
+
+function SvgAlteryouthLogo(props: SvgAlteryouthLogoProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +45,7 @@ function SvgAlteryouthLogo(props) {
           transform="translate(10.489 7)"
           fill={props.color || "#fff"}
           fontSize={6.5}
-          fontFamily="Gilroy"
+          fontFamily="Sans Serif"
           fontWeight={700}
           letterSpacing="-.04em"
         >
