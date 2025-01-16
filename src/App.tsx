@@ -11,7 +11,7 @@ import Schools from './components/sections/Schools'
 function App() {
 
   return (
-    <main className='container-fluid'>
+    <main>
       <Layout>
         <Hero />
         <Overview />
