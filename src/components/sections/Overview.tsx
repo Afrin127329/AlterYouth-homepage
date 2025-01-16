@@ -7,7 +7,7 @@ import appSchool from '/src/assets/images/app_school.png';
 
 const Overview = () => {
   return (
-    <div className='font-sans my-8 text-gray-800'>
+    <div className='font-sans mt-8 pb-10 text-gray-800 bg-gradient-to-t from-[#fafafa] via-transparent to-transparent'>
       <div className="flex flex-col items-center justify-center gap-4">
         <h1 className='text-3xl font-bold'>The Uber for Scholarships</h1>
         <p className='text-center'>A platform connecting the world with financially struggling students <br />
