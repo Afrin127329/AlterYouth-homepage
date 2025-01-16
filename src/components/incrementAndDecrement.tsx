@@ -25,8 +25,8 @@ const IncrementDecrementComponent: React.FC = () => {
   };
 
   return (
-    <div className="flex gap-4 items-center justify-between">
-      <div className="relative flex items-center max-w-[8rem]">
+    <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
+      <div className="relative flex items-center max-w-full md:max-w-[8rem]">
         <button
           type="button"
           id="decrement-btn"
