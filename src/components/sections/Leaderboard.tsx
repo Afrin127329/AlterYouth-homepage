@@ -1,3 +1,4 @@
+import leaderboardData from "../../assets/data/leaderboard.json"
 import LeaderboardCard from "../LeaderboardCard"
 
 const Leaderboard = () => {
@@ -13,10 +14,11 @@ const Leaderboard = () => {
           Your scholarship helps a child attend school and support their families at the same time.</p>
       </div>
 
-      <div className="flex flex-wrap gap-4 my-6">
-        <LeaderboardCard />
-        <LeaderboardCard />
-        <LeaderboardCard />
+      {/* <div className="flex flex-wrap gap-4 my-6 justify-center"> */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-6">
+        {leaderboardData && leaderboardData.map((data, index) => (
+          <LeaderboardCard key={index} data={data} />
+        ))}
       </div>
 
     </div>
