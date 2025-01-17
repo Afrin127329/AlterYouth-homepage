@@ -13,7 +13,7 @@ const Leaderboard = () => {
           Your scholarship helps a child attend school and support their families at the same time.</p>
       </div>
 
-      <div className="leaderboard">
+      <div className="flex flex-wrap gap-4 my-6">
         <LeaderboardCard />
         <LeaderboardCard />
         <LeaderboardCard />

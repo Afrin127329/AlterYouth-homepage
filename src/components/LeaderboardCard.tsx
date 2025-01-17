@@ -1,10 +1,10 @@
 import {
   Card,
   CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle
-} from "@/components/ui/card"
+  CardHeader
+} from "@/components/ui/card";
+import { formatDistanceToNow, parseISO } from "date-fns";
+import ReactCountryFlag from "react-country-flag";
 
 const LeaderboardCard = () => {
   const data = {
@@ -21,21 +21,36 @@ const LeaderboardCard = () => {
     ]
   }
 
+  const relativeTime = formatDistanceToNow(parseISO(data.started_at), { addSuffix: true });
+
   return (
-    <div className="leaderboard-box-shadow w-1/3">
+    <div className="leaderboard-box-shadow w-[30%]">
       <Card>
         <CardHeader>
-          <CardTitle>Create project</CardTitle>
-          <CardDescription>Deploy your new project in one-click.</CardDescription>
+          <div className="flex justify-between">
+            <div>
+              <a href="#" className="hover:underline mr-1">@{data.invite_code}</a>
+              <ReactCountryFlag className="emojiFlag" countryCode="US" svg />
+            </div>
+            <p className="text-xs text-gray-400">Joined {relativeTime}</p>
+          </div>
+          <span className="bg-lightGreen text-darkGreen rounded-full  w-fit p-1 text-[11px]">{data.count > 1 ? data.count + " " + "Scholarships" : data.count + " " + "Scholarship"}</span>
         </CardHeader>
         <CardContent>
-          <form>
-            <div className="grid w-full items-center gap-4">
-              <div className="flex flex-col space-y-1.5">
-                <p>Hello</p>
+          <div>
+            {data.student_imgs?.map((img, index) => (
+              <div key={index} className="flex items-center gap-3 m-3">
+                <div className=" w-12 h-12 ">
+                  <img src={img} alt="" className="rounded-full object-cover w-full h-full" />
+                </div>
+                <div className="text-sm">
+                  <p className="font-semibold">{data.name}</p>
+                  <p className="text-gray-400">Jaburiduwar Government Primary School</p>
+                </div>
               </div>
-            </div>
-          </form>
+            ))}
+
+          </div>
         </CardContent>
       </Card>
     </div>
