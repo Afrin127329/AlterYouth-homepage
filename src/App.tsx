@@ -16,8 +16,8 @@ function App() {
         <Hero />
         <Overview />
         <Leaderboard />
-        <Schools />
         <Community />
+        <Schools />
         <Eligibility />
       </Layout>
     </main>
