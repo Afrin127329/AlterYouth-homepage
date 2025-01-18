@@ -12,16 +12,25 @@ import {
   Select,
   SelectContent,
   SelectItem,
-  SelectTrigger,
-  SelectValue,
+  SelectTrigger
 } from "@/components/ui/select";
 import CountryList from 'country-list-with-dial-code-and-flag';
+import { useState } from "react";
 import ReactCountryFlag from "react-country-flag";
 import IncrementDecrementComponent from "./incrementAndDecrement";
 
 const HeroForm = () => {
+  const [selectedCountry, setSelectedCountry] = useState<string>("BD");
+  const [code, setCode] = useState<string>("+880")
   const countryList = CountryList.getAll();
-  console.log(countryList.splice(0, 100))
+
+  const handleChange = ((code: string) => {
+    const obj = CountryList.findOneByDialCode(code)
+    setSelectedCountry(obj?.code || "BD");
+    setCode(code);
+  })
+
+
   return (
     <Card className="w-[370px] font-sans">
       <CardHeader>
@@ -39,17 +48,20 @@ const HeroForm = () => {
               <Input id="name" placeholder="Your Email" className='h-12 rounded-md' />
             </div>
             <div className="flex gap-1 justify-center items-center space-y-1.5">
-              <Select>
+              <Select onValueChange={(value) => handleChange(value)} >
                 <SelectTrigger id="phoneInput" className='w-[8rem] h-12 mt-1.5 rounded-md'>
-                  <SelectValue defaultValue={"+880"} />
-                  <span className="flex items-center gap-1">
-                    <ReactCountryFlag className="emojiFlag" countryCode="BD" svg />
-                    +880
-                  </span>
+                  <div className="flex items-center gap-1">
+                    <ReactCountryFlag
+                      className="emojiFlag"
+                      countryCode={selectedCountry}
+                      svg
+                    />
+                    <span>{code}</span>
+                  </div>
                 </SelectTrigger>
                 <SelectContent position="popper" className='w-[250px]'>
-                  {countryList.splice(0, 100).map((country) => (
-                    <SelectItem key={country.dial_code} value={country.dial_code}>
+                  {countryList.splice(0, 100).map((country, index) => (
+                    <SelectItem key={index} value={country.dial_code}>
                       <span className="flex items-center gap-3">
                         <ReactCountryFlag
                           className="emojiFlag"
