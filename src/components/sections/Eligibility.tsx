@@ -1,15 +1,23 @@
 import SvgDisabledFather from "@/assets/icons/DisabledFather";
 import SvgOrphan from "@/assets/icons/Orphan";
 import SvgSingleMother from "@/assets/icons/SingleMother";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTrigger
+} from "@/components/ui/sheet";
+import playBtn from "/src/assets/icons/play-btn.svg";
 import applicant from "/src/assets/images/applicant.jpg";
+import videoPoster from "/src/assets/images/ay_video_poster.jpg";
 import headTeacher from "/src/assets/images/headteacher.jpg";
 import person from "/src/assets/images/person.jpg";
-
+import video from "/src/assets/videos/ay_explainer.mp4";
 const Eligibility = () => {
   return (
     <div className="font-sans">
       {/* Section 1 */}
-      <div>
+      <div className="my-8">
         <div className="flex flex-col justify-center items-center my-8">
           <h2 className="text-2xl font-bold mb-4">Scholarship Eligibility</h2>
           <p className="text-center w-full md:w-[550px]">Only students who are currently enrolled in Government Primary Schools and fall
@@ -42,7 +50,7 @@ const Eligibility = () => {
       </div>
 
       {/* Section 2 */}
-      <div>
+      <div className="my-8">
         <div className="container my-8">
           <div className="box rounded-lg cursor-pointer">
             <a href="https://play.google.com/store/apps/details?id=com.alteryouth.teacher" target="_blank">
@@ -88,7 +96,30 @@ const Eligibility = () => {
       </div>
 
       {/* Section 3  */}
-      <div>
+      <div className="flex flex-col md:flex-row gap-16 justify-center items-center my-8 mt-16 p-6">
+        <Sheet>
+          <SheetTrigger>
+            <div className="relative h-[400px] w-full md:w-[500px] cursor-pointer">
+              <img src={videoPoster} alt="" className="w-full h-full object-cover rounded-2xl" />
+              <div className="absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 rounded-full opacity-50 bg-gray-700 w-[100px] h-[100px] flex items-center justify-center">
+                <img src={playBtn} alt="" width={50} className="ml-[8px]" />
+              </div>
+            </div>
+          </SheetTrigger>
+
+          <div>
+            <h1 className="text-3xl font-bold mb-6 hidden md:block">The scholarship app</h1>
+            <h1 className="text-2xl font-bold mb-6 block md:hidden">Embark on a scholarship journey</h1>
+            <p className="w-full max-w-[500px] leading-7 hidden md:block">In Bangladesh, while 98% of children enroll in school, 2 million children drop out to work before achieving literacy in order to support their families financially. On the flipside, Bangladesh has a diaspora population of 10 million in advanced economies who wish to make an impact on their homeland. AlterYouth, imagine Uber for scholarships, is a C2C scholarship app enabling users from around the world to start scholarships directly for financially struggling students in Government Primary Schools of Bangladesh, through digital banking.</p>
+            <p className="w-full max-w-[500px] leading-7 block md:hidden">Here's a 100 second video that takes you to a village of Bangladesh and shows how your scholarship impacts a day in the life of a student who needs it</p>
+          </div>
+
+          <SheetContent side={"bottom"} className="w-[400px] sm:w-[540px] mx-auto rounded-lg p-0 mb-4">
+            <SheetHeader className="mt-[-1px] rounded-lg">
+              <video src={video} controls autoPlay className=" rounded-lg" />
+            </SheetHeader>
+          </SheetContent>
+        </Sheet>
 
       </div>
 
