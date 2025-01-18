@@ -16,6 +16,7 @@ export interface SchoolData {
   school_img_url: string;
   ht_img_id: number;
   ht_name: string;
+  ht_img_url: string;
   ht_quote: string;
   year_established: string;
   total_students: string;
