@@ -38,8 +38,8 @@ const Community = () => {
         }}>
           <CarouselContent >
             {Array.from({ length: 5 }).map((_, index) => (
-              <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4">
-                <div className="p-1 flex">
+              <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4 pl-0">
+                <div className="flex">
                   <img src={community1} alt="Community" />
                   <img src={community2} alt="Community" />
                   <img src={community3} alt="Community" />
