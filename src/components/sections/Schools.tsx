@@ -1,9 +1,9 @@
+import { schools } from "@/assets/data/schools"
 import {
   Carousel,
   CarouselContent,
   CarouselItem
 } from "@/components/ui/carousel"
-import schoolsData from "../../assets/data/schools.json"
 import SchoolCard from "../SchoolCard"
 const Schools = () => {
   return (
@@ -15,7 +15,7 @@ const Schools = () => {
         loop: true,
       }}>
         <CarouselContent className="-ml-3">
-          {schoolsData.map((school, index) => (
+          {schools.map((school, index) => (
             <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4">
               <div className="p-1 flex">
                 <SchoolCard school={school} key={index} />
