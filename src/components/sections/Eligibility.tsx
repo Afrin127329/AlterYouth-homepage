@@ -1,4 +1,5 @@
 import SvgDisabledFather from "@/assets/icons/DisabledFather";
+import SvgGoogle from "@/assets/icons/Google";
 import SvgOrphan from "@/assets/icons/Orphan";
 import SvgSingleMother from "@/assets/icons/SingleMother";
 import {
@@ -10,9 +11,14 @@ import {
 import playBtn from "/src/assets/icons/play-btn.svg";
 import applicant from "/src/assets/images/applicant.jpg";
 import videoPoster from "/src/assets/images/ay_video_poster.jpg";
+import expoImg from "/src/assets/images/expo.png";
 import headTeacher from "/src/assets/images/headteacher.jpg";
 import person from "/src/assets/images/person.jpg";
+import undpImg from "/src/assets/images/undp.jpg";
 import video from "/src/assets/videos/ay_explainer.mp4";
+
+
+
 const Eligibility = () => {
   return (
     <div className="font-sans">
@@ -124,8 +130,28 @@ const Eligibility = () => {
       </div>
 
       {/* Section 4  */}
-      <div>
-
+      <div className="my-8">
+        <h1 className="text-xl font-semibold text-center my-8">In Association With</h1>
+        <div className="flex gap-6 flex-col md:flex-row justify-evenly items-center mx-3 md:mx-6">
+          <div className="flex gap-4 items-center">
+            <img src={undpImg} alt="UNDP" className="w-[120px] h-[180px]  object-contain " />
+            <p className="font-semibold">"Asia Pacific <br />
+              SDG Enterprise Award"</p>
+          </div>
+          <div className="flex sm:w-auto">
+            <div className="self-center w-[1px] h-[120px] inline-block bg-[#DEE2E6]"></div>
+          </div>
+          <div className="w-[120px] h-[180px]">
+            <img src={expoImg} alt="Expo" />
+          </div>
+          <div className="flex sm:w-auto">
+            <div className="self-center w-[1px] h-[120px] inline-block bg-[#DEE2E6]"></div>
+          </div>
+          <div className="flex flex-col justify-center items-center mb-12">
+            <SvgGoogle width={210} height={80} className="object-contain" />
+            <p className="">Winner of Google Business Group Stories</p>
+          </div>
+        </div>
       </div>
     </div>
   )
