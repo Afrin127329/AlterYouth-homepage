@@ -1,7 +1,5 @@
 import { SchoolData } from "@/lib/types";
 
-
-
 const SchoolCard: React.FC<{ school: SchoolData }> = ({ school }) => {
 
   return (

@@ -25,15 +25,18 @@ import community8 from '/src/assets/images/community_8.jpg'
 import community9 from '/src/assets/images/community_9.jpg'
 const Community = () => {
   return (
-    <div className="font-sans mt-8">
+    <div className="font-sans my-8">
       <div className="mx-3 lg:mx-16">
         <h2 className="text-2xl font-bold mb-4 ">Community Impact</h2>
         <p>Every scholarship begins with shipping a mobile phone to the parent of the student. Then they create their own mobile bank account
           using that phone, to start receiving their child's scholarships directly, every month.</p>
       </div>
       <div className=" mt-8">
-        <Carousel className="w-full max-w-full">
-          <CarouselContent>
+        <Carousel className="w-full max-w-full" opts={{
+          align: "start",
+          loop: true,
+        }}>
+          <CarouselContent >
             {Array.from({ length: 5 }).map((_, index) => (
               <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4">
                 <div className="p-1 flex">
